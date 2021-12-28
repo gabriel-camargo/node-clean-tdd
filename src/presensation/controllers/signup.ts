@@ -1,7 +1,7 @@
 export class SignUpController {
   public handle (req: any): any {
     return {
-      statusCode: 500
+      statusCode: 401
     }
   }
 }

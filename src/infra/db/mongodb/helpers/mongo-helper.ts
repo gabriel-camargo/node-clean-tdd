@@ -5,6 +5,8 @@ class MongoHelperClass {
 
   async connect (uri: string): Promise<void> {
     this.client = await MongoClient.connect(uri)
+
+    console.log('DB connected in ' + uri)
   }
 
   async disconnect (): Promise<void> {

@@ -115,4 +115,22 @@ describe('LoginController', () => {
     const httpResponse = await sut.handle(makeHttpRequest())
     expect(httpResponse).toEqual(unautorized())
   })
+
+  test('Should return 500 if authentucatuib throws', async () => {
+    const { sut, authStub } = makeSut()
+    jest.spyOn(authStub, 'auth').mockReturnValueOnce(new Promise((resolve, reject) => reject(
+      new Error()
+    )))
+    const httpResponse = await sut.handle(makeHttpRequest())
+    expect(httpResponse).toEqual(serverError(new Error()))
+  })
+
+  test('Should return 200 if valid credentias were provided', async () => {
+    const { sut, authStub } = makeSut()
+    jest.spyOn(authStub, 'auth').mockReturnValueOnce(new Promise(
+      (resolve) => resolve(null)
+    ))
+    const httpResponse = await sut.handle(makeHttpRequest())
+    expect(httpResponse).toEqual(unautorized())
+  })
 })

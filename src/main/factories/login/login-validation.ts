@@ -1,7 +1,7 @@
 
 import { EmailValidation } from '../../../presensation/helpers/validators/email-validation'
 import { RequiredFieldValidation } from '../../../presensation/helpers/validators/required-field-validaton'
-import { Validation } from '../../../presensation/helpers/validators/validation'
+import { Validation } from '../../../presensation/protocols/validation'
 import { ValidationComposite } from '../../../presensation/helpers/validators/validation-composite'
 import { EmailValidatorAdapter } from '../../../utils/email-validator-adapter'
 

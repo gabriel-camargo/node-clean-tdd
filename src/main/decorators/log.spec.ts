@@ -1,7 +1,7 @@
 import { Controller, HttpRequest, HttpResponse } from '../../presensation/protocols'
 import { LogControllerDecorator } from './log'
 import { ok, serverError } from '../../presensation/helpers/http/http-helper'
-import { LogErrorRepository } from '../../data/protocols/log-error-repository'
+import { LogErrorRepository } from '../../data/protocols/db/log-error-repository'
 import { AccountModel } from '../../domain/models/account'
 
 interface sutTypes {

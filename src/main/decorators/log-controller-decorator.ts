@@ -2,7 +2,10 @@ import { LogErrorRepository } from '../../data/protocols/db/log/log-error-reposi
 import { Controller, HttpRequest, HttpResponse } from '../../presensation/protocols'
 
 export class LogControllerDecorator implements Controller {
-  constructor (private readonly controller: Controller, private readonly logRepository: LogErrorRepository) {}
+  constructor (
+    private readonly controller: Controller,
+    private readonly logRepository: LogErrorRepository
+  ) {}
 
   public async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     const httpResponse = await this.controller.handle(httpRequest)
